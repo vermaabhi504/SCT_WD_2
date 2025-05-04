@@ -1,0 +1,84 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Landing Page</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: transparent;
+  transition: background 0.3s, box-shadow 0.3s;
+  z-index: 1000;
+}
+
+header.scrolled {
+  background: #333;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1em;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 0.5em 1em;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background: white;
+  color: #333;
+  border-radius: 5px;
+}
+
+.hero {
+  margin-top: 80px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  padding: 2em;
+}
+
+  </style>
+</head>
+<body>
+  <header id="navbar">
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  <section class="hero" id="home">
+    <div>Welcome to Our Responsive Landing Page</div>
+  </section>
+  <section class="hero" id="about" style="background: #ff6f61;">About Us</section>
+  <section class="hero" id="services" style="background: #00b894;">Our Services</section>
+  <section class="hero" id="contact" style="background: #fdcb6e; color: #333;">Contact Us</section>  <script>
+    const navbar = document.getElementById('navbar');
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+      } else {
+        navbar.classList.remove('scrolled');
+      }
+    });
+  </script></body>
+</html>
